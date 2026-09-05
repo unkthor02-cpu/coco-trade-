@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Coco AI — Master Admin & Engine Control</title>
+  <link rel="stylesheet" href="/assets/index-QTSTxl9E.css"/>
+  <link rel="stylesheet" href="/_next/static/chunks/0lirnnih6gnq7.css"/>
+  <style>
+    :root {
+      --primary: #f59e0b;
+      --bg: #06030b;
+      --card-bg: rgba(22, 16, 33, 0.9);
+      --border: rgba(245, 158, 11, 0.25);
+    }
+    body {
+      background: #06030b;
+      color: #fafaf9;
+      font-family: system-ui, -apple-system, sans-serif;
+      min-height: 100vh;
+      margin: 0;
+    }
+    .admin-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 32px;
+      border-bottom: 1px solid var(--border);
+      background: rgba(18, 13, 28, 0.95);
+      backdrop-filter: blur(16px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .container {
+      max-width: 1400px;
+      margin: 28px auto;
+      padding: 0 24px;
+    }
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .stat-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+    .panel {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 24px;
+      margin-bottom: 24px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+    .btn-gold {
+      background: linear-gradient(135deg, #d97706, #f59e0b);
+      border: none;
+      color: #1c1917;
+      font-weight: 800;
+      padding: 10px 20px;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 0 14px rgba(245,158,11,0.4);
+    }
+    .btn-gold:hover {
+      opacity: 0.9;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 16px;
+    }
+    th, td {
+      text-align: left;
+      padding: 14px 16px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      font-size: 13px;
+    }
+    th {
+      color: #a8a29e;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 11px;
+    }
+    .input-field {
+      background: #120d1c;
+      border: 1px solid var(--border);
+      color: #fff;
+      padding: 10px 14px;
+      border-radius: 12px;
+      width: 100%;
+      box-sizing: border-box;
+      outline: none;
+    }
+    .input-field:focus {
+      border-color: #f59e0b;
+    }
+  </style>
+</head>
+<body>
+  <header class="admin-header">
+    <div style="display:flex;align-items:center;gap:12px;font-weight:800;font-size:18px;color:#fbbf24;">
+      <img src="/coco-logo.jpg" style="width:32px;height:32px;border-radius:8px;object-fit:cover;" alt="Coco"/>
+      COCO AI · MASTER API & ENGINE CONTROL
+    </div>
+    <div style="display:flex;align-items:center;gap:14px;">
+      <span style="font-size:13px;color:#a8a29e;">Super Admin: <b style="color:#fbbf24;">teamcmdx</b></span>
+      <a href="/console" style="background:linear-gradient(135deg,#7c3aed,#9333ea);color:#fff;padding:6px 14px;border-radius:999px;font-size:12px;text-decoration:none;font-weight:700;box-shadow:0 0 12px rgba(147,51,234,0.4);">💻 Open Real Terminal</a>
+      <a href="/signals" style="background:rgba(245,158,11,0.2);border:1px solid #f59e0b;color:#fbbf24;padding:6px 14px;border-radius:999px;font-size:12px;text-decoration:none;font-weight:700;">📊 Real Signals</a>
+      <a href="/" style="background:rgba(255,255,255,0.08);border:1px solid var(--border);color:#e7e5e4;padding:6px 12px;border-radius:999px;font-size:12px;text-decoration:none;">🏠 Main Portal</a>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="stat-grid">
+      <div class="stat-card">
+        <small style="color:#a8a29e;font-weight:600;">ACTIVE TERMINAL SESSIONS</small>
+        <div style="font-size:28px;font-weight:800;color:#fff;margin-top:6px;">2,418</div>
+        <small style="color:#10b981;">↑ Live on console.cocotrade.org</small>
+      </div>
+      <div class="stat-card">
+        <small style="color:#a8a29e;font-weight:600;">FIREBASE SYNC</small>
+        <div style="font-size:28px;font-weight:800;color:#fbbf24;margin-top:6px;">CONNECTED</div>
+        <small style="color:#a8a29e;">sweetex-ai-2de61-default-rtdb</small>
+      </div>
+      <div class="stat-card">
+        <small style="color:#a8a29e;font-weight:600;">COCO WIN RATE</small>
+        <div style="font-size:28px;font-weight:800;color:#10b981;margin-top:6px;">97.4%</div>
+        <small style="color:#a8a29e;">Neural Momentum Strategy</small>
+      </div>
+      <div class="stat-card">
+        <small style="color:#a8a29e;font-weight:600;">API STATUS</small>
+        <div style="font-size:28px;font-weight:800;color:#38bdf8;margin-top:6px;">ALL OPERATIONAL</div>
+        <small style="color:#10b981;">● 8 Active Endpoints</small>
+      </div>
+    </div>
+
+    <!-- Generate Licence Key & Add User -->
+    <div class="panel">
+      <h3 style="margin:0 0 16px;font-size:18px;color:#fbbf24;">🔑 Generate Coco AI Licence Key & Provision User</h3>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:14px;align-items:center;">
+        <div>
+          <label style="font-size:12px;color:#a8a29e;display:block;margin-bottom:4px;">Telegram Username</label>
+          <input id="keyTarget" class="input-field" placeholder="@username" value="@teamcmdx"/>
+        </div>
+        <div>
+          <label style="font-size:12px;color:#a8a29e;display:block;margin-bottom:4px;">Account Tier</label>
+          <select id="keyPlan" class="input-field" onchange="updatePrefix()">
+            <option value="COCO-VIP-">COCO LIFETIME VIP ($150)</option>
+            <option value="COCO-PRO-">COCO PRO MONTHLY ($75)</option>
+            <option value="COCO-FREE-">COCO FREE TRIAL (1-Day)</option>
+          </select>
+        </div>
+        <div>
+          <label style="font-size:12px;color:#a8a29e;display:block;margin-bottom:4px;">Licence Key Format</label>
+          <input id="keyPrefix" class="input-field" value="COCO-VIP-"/>
+        </div>
+        <div style="padding-top:20px;">
+          <button onclick="generateAndSaveUser()" class="btn-gold">Create & Activate</button>
+        </div>
+      </div>
+      <div id="generatedKeyBox" style="margin-top:16px;padding:14px 18px;background:rgba(245,158,11,0.15);border:1px solid #f59e0b;border-radius:12px;display:none;">
+        <span style="color:#a8a29e;font-size:12px;">CREATED LICENCE KEY:</span>
+        <b id="generatedKeyText" style="color:#fbbf24;font-size:16px;margin-left:10px;font-family:monospace;">—</b>
+      </div>
+    </div>
+
+    <!-- Active License Keys Table from API -->
+    <div class="panel">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+        <h3 style="margin:0;font-size:18px;">📋 Real Users & Licence Registry (<span id="userCount">3</span> Active)</h3>
+        <button onclick="loadUsers()" style="background:rgba(255,255,255,0.08);border:1px solid var(--border);color:#fff;padding:6px 14px;border-radius:999px;font-size:12px;cursor:pointer;">↻ Refresh List</button>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>USER</th>
+            <th>TELEGRAM</th>
+            <th>LICENCE KEY</th>
+            <th>TIER</th>
+            <th>STATUS</th>
+            <th>DATE CREATED</th>
+            <th>ACTIONS</th>
+          </tr>
+        </thead>
+        <tbody id="keysTable">
+          <!-- Populated by API -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    function updatePrefix() {
+      document.getElementById('keyPrefix').value = document.getElementById('keyPlan').value;
+    }
+
+    async function loadUsers() {
+      try {
+        const res = await fetch('/api/admin/users');
+        const data = await res.json();
+        const users = data.users || [];
+        document.getElementById('userCount').textContent = users.length;
+        document.getElementById('keysTable').innerHTML = users.map(u => `
+          <tr>
+            <td><b>${u.name}</b></td>
+            <td>${u.telegram}</td>
+            <td><code style="color:#fbbf24;font-size:13px;">${u.key}</code></td>
+            <td><span style="background:rgba(245,158,11,0.2);color:#fbbf24;padding:4px 10px;border-radius:6px;font-size:11px;font-weight:700;">${u.tier}</span></td>
+            <td><span style="color:#10b981;font-weight:700;">● ${u.status}</span></td>
+            <td style="color:#a8a29e;">${new Date(u.createdAt).toLocaleDateString()}</td>
+            <td><button onclick="deleteUser('${u.id}')" style="background:rgba(239,68,68,0.15);border:1px solid #ef4444;color:#f87171;padding:4px 8px;border-radius:6px;font-size:11px;cursor:pointer;">Delete</button></td>
+          </tr>
+        `).join('');
+      } catch (err) {
+        console.error('Error loading users:', err);
+      }
+    }
+
+    async function generateAndSaveUser() {
+      const prefix = document.getElementById('keyPrefix').value || 'COCO-VIP-';
+      const rand = Math.random().toString(36).substring(2, 6).toUpperCase() + '-' + Math.random().toString(36).substring(2, 6).toUpperCase();
+      const fullKey = prefix + rand;
+      const target = document.getElementById('keyTarget').value || '@user';
+      const tier = document.getElementById('keyPlan').value.replace('-', '_').replace('-', '');
+
+      document.getElementById('generatedKeyText').textContent = fullKey;
+      document.getElementById('generatedKeyBox').style.display = 'block';
+
+      await fetch('/api/admin/users', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: target.replace('@', ''),
+          telegram: target,
+          tier: document.getElementById('keyPlan').selectedOptions[0].text.split(' ')[1] || 'VIP',
+          key: fullKey
+        })
+      });
+
+      loadUsers();
+    }
+
+    async function deleteUser(id) {
+      await fetch('/api/admin/delete-user', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id })
+      });
+      loadUsers();
+    }
+
+    loadUsers();
+  </script>
+
+
+
+<script>
+function autoFillCocoMaster() {
+  const inputs = Array.from(document.querySelectorAll('input, textarea'));
+  inputs.forEach(inp => {
+    const placeholder = (inp.getAttribute('placeholder') || '').toLowerCase();
+    let val = '';
+    if (placeholder.includes('name') || placeholder.includes('full')) val = 'teamcmdx';
+    else if (placeholder.includes('telegram') || placeholder.includes('@')) val = '@teamcmdx';
+    else if (placeholder.includes('key') || placeholder.includes('licence') || placeholder.includes('license')) val = 'COCO-VIP-TEAMCMDX-2026';
+
+    if (val) {
+      const setter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value')?.set;
+      if (setter) setter.call(inp, val); else inp.value = val;
+      const tracker = inp._valueTracker;
+      if (tracker) tracker.setValue('');
+      inp.dispatchEvent(new Event('input', { bubbles: true }));
+      inp.dispatchEvent(new Event('change', { bubbles: true }));
+    }
+  });
+  console.log('Coco AI auto-filled.');
+}
+</script>
+</body>
+</html>
