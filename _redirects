@@ -1,0 +1,8 @@
+/api/*       /.netlify/functions/api/:splat  200
+/console     /console.html                   200
+/terminal    /console.html                   200
+/signals     /signals.html                   200
+/blog        /blog.html                      200
+/faq         /faq.html                       200
+/about       /about.html                     200
+/admin       /admin.html                     200
