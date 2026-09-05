@@ -1,0 +1,12 @@
+{
+  "name": "cocotrade-terminal",
+  "version": "1.0.0",
+  "description": "Coco AI Trading Terminal & Signal Engine",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "tesseract.js": "^7.0.0"
+  }
+}

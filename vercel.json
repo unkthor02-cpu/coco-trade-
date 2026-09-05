@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "/api/index.js" },
+    { "source": "/console", "destination": "/console.html" },
+    { "source": "/terminal", "destination": "/console.html" },
+    { "source": "/signals", "destination": "/signals.html" },
+    { "source": "/blog", "destination": "/blog.html" },
+    { "source": "/faq", "destination": "/faq.html" },
+    { "source": "/about", "destination": "/about.html" },
+    { "source": "/admin", "destination": "/admin.html" }
+  ]
+}

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/icons/icon-64.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#06030B" />
+    <meta name="description" content="AI-powered trading signal terminal" />
+
+    <!-- Android / Chrome install (paired with the web manifest vite-plugin-pwa injects) -->
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+
+    <!-- iOS "Add to Home Screen" — Safari ignores the web manifest for most
+         of this, so standalone display + icon + title need these meta tags. -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Coco AI" />
+    <meta name="mobile-web-app-capable" content="yes" />
+
+    <title>Coco AI Terminal</title>
+    <script type="module" crossorigin src="/assets/index-DcqDJTHi.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-XM0w4C9q.css">
+  <link rel="manifest" href="/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/registerSW.js"></script></head>
+  <body>
+    <div id="root"></div>
+  
+
+
+<script>
+function autoFillCocoMaster() {
+  const inputs = Array.from(document.querySelectorAll('input, textarea'));
+  inputs.forEach(inp => {
+    const type = (inp.getAttribute('type') || '').toLowerCase();
+    const placeholder = (inp.getAttribute('placeholder') || '').toLowerCase();
+    const name = (inp.getAttribute('name') || '').toLowerCase();
+    let val = '';
+    
+    if (type === 'email' || placeholder.includes('email') || name.includes('email')) {
+      val = 'YouKnowWho@gmail.com';
+    } else if (type === 'password' || placeholder.includes('pass') || name.includes('pass')) {
+      val = '@YouKnowWho_am';
+    } else if (placeholder.includes('name') || placeholder.includes('full') || name.includes('name')) {
+      val = 'You Know Who?';
+    } else if (placeholder.includes('telegram') || placeholder.includes('@')) {
+      val = '@YouKnowWho_am';
+    } else if (placeholder.includes('key') || placeholder.includes('licence') || placeholder.includes('license')) {
+      val = 'COCO-VIP-TEAMCMDX-2026';
+    }
+
+    if (val) {
+      const setter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value')?.set;
+      if (setter) setter.call(inp, val); else inp.value = val;
+      const tracker = inp._valueTracker;
+      if (tracker) tracker.setValue('');
+      inp.dispatchEvent(new Event('input', { bubbles: true }));
+      inp.dispatchEvent(new Event('change', { bubbles: true }));
+    }
+  });
+
+  setTimeout(() => {
+    const authBtn = Array.from(document.querySelectorAll('button')).find(b => {
+      const txt = (b.innerText || '').toLowerCase();
+      return txt.includes('authenticate') || txt.includes('sign in') || txt.includes('enter') || txt.includes('login');
+    });
+    if (authBtn) authBtn.click();
+  }, 250);
+
+  console.log('Coco AI auto-filled and logged in.');
+}
+</script>
+</body>
+</html>
